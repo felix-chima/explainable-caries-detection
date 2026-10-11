@@ -57,6 +57,10 @@ tables and figures for Chapter Four.
       - [ ] seeds 1, 2: GPU queue `scripts/run_queue.sh` (log `runs/queue.log`), started 11 Oct ~10:00:
             YOLO s1 -> YOLO s2 -> FRCNN s1 -> FRCNN s2 -> evaluate each. Resumable: just rerun it.
             Ultralytics nests output in `runs/detect/runs/detect/yolo_sN`; `runs/detect/yolo_sN` are symlinks.
+            11 Oct: FRCNN seeds 1, 2 moved to Google Colab T4 (`notebooks/colab_frcnn.ipynb`, results to
+            Drive `caries_runs/`, user downloads `frcnn_results.zip` to ~/Downloads). Stub logs
+            `runs/frcnn/frcnn_s{1,2}.log` ("done: ... Colab") make the Mac queue skip them. On import, unzip
+            into runs/ (overwrites stubs) and rerun analysis.py. Note in Ch 4: seeds 1-2 trained on CUDA T4.
 - [x] Test scoring: `scripts/evaluate.py {frcnn|yolo} <weights> --name X` -> `runs/eval/X_test.json`,
       raw preds cached in `runs/eval/X_{val,test}.npz`. Threshold = max-F1 on val, applied to test.
       YOLO mAP50 0.527 matches Ultralytics (validates metrics.py). Seed-0 test: frcnn mAP50 0.551, F1 0.532;

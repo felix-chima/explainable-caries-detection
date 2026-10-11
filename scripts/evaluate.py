@@ -71,7 +71,7 @@ def main():
     ap.add_argument("--data", help="other YOLO-format dataset root, e.g. data/external/children_yolo")
     ap.add_argument("--conf-from", help="eval name whose DENTEX val predictions set the threshold "
                                         "(external sets: never tune on the external data)")
-    ap.add_argument("--device", default="mps" if torch.backends.mps.is_available() else "cpu")
+    ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
     a = ap.parse_args()
 
     out = ROOT / "runs/eval"

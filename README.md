@@ -23,7 +23,8 @@ pip install -r requirements.txt
 | 1. Build the DENTEX split (70/15/15 per image, seed 42; Caries + Deep Caries as one class) | `python scripts/prepare_dentex.py` | `data/dentex_yolo/`, `caries.yaml` |
 | 2. YOLOv8s baseline, seeds 0 to 2 | `yolo detect train model=yolov8s.pt data=caries.yaml epochs=100 imgsz=640 batch=16 seed=S` | `runs/detect/` |
 | 3. Faster R-CNN, seeds 0 to 2 | `python scripts/train_frcnn.py --name frcnn_sS --seed S --batch 1` | `runs/frcnn/` |
-|    (steps 2 and 3 for seeds 1 and 2 as one resumable queue) | `zsh scripts/run_queue.sh` | |
+|    (steps 2 and 3 for seeds 1 and 2 as one resumable queue) | `zsh scripts/run_queue.sh [yolo:1 frcnn:2 ...]` | |
+|    (or Faster R-CNN seeds on a free Colab T4) | [open `notebooks/colab_frcnn.ipynb` in Colab](https://colab.research.google.com/github/felix-chima/explainable-caries-detection/blob/main/notebooks/colab_frcnn.ipynb) | Drive `caries_runs/` |
 | 4. Test predictions and scores (threshold = max F1 on validation) | `python scripts/evaluate.py {frcnn,yolo} <best.pt> --name NAME` | `runs/eval/` |
 | 5. External set | `python scripts/prepare_external.py children` then `evaluate.py ... --data data/external/children_yolo --conf-from NAME` | `runs/eval/` |
 | 6. Statistics and figures (bootstrap CIs, paired test, FROC, calibration) | `python scripts/analysis.py` | `runs/analysis/` |

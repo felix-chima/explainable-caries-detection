@@ -103,7 +103,7 @@ def main():
     ap.add_argument("--min-size", type=int, default=800)
     ap.add_argument("--max-size", type=int, default=1333)
     ap.add_argument("--limit", type=int, default=None, help="images per split, for smoke tests")
-    ap.add_argument("--device", default="mps" if torch.backends.mps.is_available() else "cpu")
+    ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
     ap.add_argument("--resume", action="store_true")
     a = ap.parse_args()
 
