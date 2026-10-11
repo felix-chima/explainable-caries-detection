@@ -1,0 +1,3 @@
+model,run,D_ECE
+Faster R-CNN,frcnn_s0,0.19163962163858944
+YOLOv8s,yolov8s,0.1340927668813481

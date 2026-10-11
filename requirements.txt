@@ -1,0 +1,12 @@
+# Python 3.11. Tested on Apple M1 (MPS backend).
+torch==2.14.1
+torchvision==0.29.1
+ultralytics==8.4.173
+grad-cam==1.5.7
+opencv-python==5.0.0.93
+numpy==2.4.6
+pandas==3.0.6
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+pillow==12.3.0

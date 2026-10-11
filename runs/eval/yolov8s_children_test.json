@@ -1,0 +1,21 @@
+{
+  "name": "yolov8s_children",
+  "model": "yolo",
+  "split": "test",
+  "conf": 0.11351171135902405,
+  "images": 100,
+  "mAP50": 0.09176978791260994,
+  "mAP50_95": 0.018830504463110888,
+  "precision": 0.16186252771618626,
+  "sensitivity": 0.23248407643312102,
+  "f1": 0.1908496732026144,
+  "img_sensitivity": 0.9452054794520548,
+  "img_specificity": 0.1111111111111111,
+  "les_TP": 73,
+  "les_FP": 378,
+  "les_FN": 241,
+  "img_TP": 69,
+  "img_FP": 24,
+  "img_TN": 3,
+  "img_FN": 4
+}

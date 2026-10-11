@@ -1,0 +1,21 @@
+{
+  "name": "frcnn_s0_children",
+  "model": "frcnn",
+  "split": "test",
+  "conf": 0.40759626030921936,
+  "images": 100,
+  "mAP50": 0.01840143169017952,
+  "mAP50_95": 0.002896723556696261,
+  "precision": 0.0695970695970696,
+  "sensitivity": 0.06050955414012739,
+  "f1": 0.06473594548551959,
+  "img_sensitivity": 0.863013698630137,
+  "img_specificity": 0.18518518518518517,
+  "les_TP": 19,
+  "les_FP": 254,
+  "les_FN": 295,
+  "img_TP": 63,
+  "img_FP": 22,
+  "img_TN": 5,
+  "img_FN": 10
+}

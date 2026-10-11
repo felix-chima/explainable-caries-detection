@@ -1,0 +1,13 @@
+{
+  "name": "frcnn_s0",
+  "seed": 0,
+  "epochs": 40,
+  "patience": 8,
+  "lr": 0.0001,
+  "batch": 1,
+  "min_size": 800,
+  "max_size": 1333,
+  "limit": null,
+  "device": "mps",
+  "resume": false
+}
